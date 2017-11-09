@@ -1,0 +1,212 @@
+@import url(../../node_modules/bootstrap/dist/css/bootstrap.css);
+@import url("https://fonts.googleapis.com/css?family=Architects+Daughter");
+.header {
+  height: 85px;
+  background-color: #2e3d49;
+  margin-bottom: 25px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+  .header div {
+    height: inherit; }
+  .header .logo {
+    height: inherit; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 65px;
+  background-color: #2e3d49;
+  width: 100%;
+  color: #02B3E4;
+  padding-top: 10px; }
+  .footer div {
+    height: inherit; }
+  .footer .title {
+    font-size: 19px; }
+  .footer .sub-title {
+    font-size: 12px; }
+
+.open-search {
+  position: fixed;
+  right: 25px;
+  bottom: 75px; }
+
+.open-search a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f95c3c;
+  background-image: url("../assets/add.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 0; }
+
+.badge {
+  color: #f95c3c;
+  background: #2e3d49;
+  margin-left: 10px; }
+
+.close-search {
+  width: 50px;
+  background: #2e3d49;
+  background-image: url("../assets/arrow-back.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0; }
+
+.search-books-bar {
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23); }
+
+.search-books-input-wrapper {
+  flex: 1;
+  background: #e9e; }
+
+.search-books-bar input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.25em;
+  border: none;
+  outline: none; }
+
+.found {
+  padding: 5px;
+  background: #2e3d49;
+  color: #888888; }
+
+/* books grid */
+.books-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 100px; }
+
+.books-grid li {
+  padding: 10px 15px;
+  text-align: left; }
+
+.book {
+  width: 140px; }
+
+.book-title,
+.book-authors {
+  font-size: 0.8em; }
+
+.book-title {
+  margin-top: 10px; }
+
+.book-authors {
+  color: #999; }
+
+.book-top {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end; }
+
+.book-shelf-changer {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f95c3c;
+  background-image: url("../assets/arrow-drop-down.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.book-shelf-changer select {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer; }
+
+/* book cover */
+.book-cover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: #eee;
+  width: 128px;
+  height: 193px; }
+  .book-cover .tag {
+    background-color: #2e3d49;
+    opacity: 0.8;
+    color: #f95c3c;
+    font-size: 12px;
+    border-bottom: 1px solid #f95c3c; }
+
+.book-cover-title {
+  padding: 20px 10px 0;
+  text-align: center;
+  font-size: 0.8em; }
+
+.shelf {
+  margin-bottom: 65px;
+  margin-top: 20px; }
+
+.subtitle {
+  color: #f95c3c; }
+
+.modal-header {
+  border-bottom: 1px solid #f95c3c; }
+  .modal-header .close {
+    color: #f95c3c; }
+
+.text {
+  position: relative;
+  font-size: 14px;
+  color: black;
+  width: 100%;
+  /* Could be anything you like. */ }
+
+.text-concat {
+  position: relative;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 13.6em;
+  /* (Number of lines you want visible)  (line-height) */
+  line-height: 1.2em;
+  text-align: justify; }
+
+.text.ellipsis::after {
+  content: "...";
+  position: absolute;
+  right: 0px;
+  bottom: 4px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Architects Daughter", cursive; }
+
+.loader {
+  background-color: #2e3d49;
+  height: inherit;
+  color: #02B3E4; }
+  .loader .title {
+    font-size: 19px; }
+  .loader .sub-title {
+    font-size: 12px; }
+
+html,
+body,
+#root,
+.app {
+  height: 100%; }
+
+.nav-tabs .nav-link.active {
+  border-top: 2px solid #f95c3c; }
+
+.nav-tabs {
+  font-size: 13px; }
+  .nav-tabs .nav-item {
+    cursor: pointer; }

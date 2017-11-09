@@ -1,0 +1,21 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    background-color: $color-oxford-blue;
+    width: 100%;
+    color: $color-cerulean;
+    padding-top: 10px;
+
+    div {
+        height: inherit;
+    }
+
+    .title {
+        font-size: 19px;
+    }
+
+    .sub-title {
+        font-size: 12px;
+    }
+}

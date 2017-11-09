@@ -1,0 +1,52 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+
+// Components
+@import './_variables.scss';
+@import '../components/header/_header.scss';
+@import '../components/footer/_footer.scss';
+@import '../components/grid/_grid.scss';
+@import '../components/search/_search.scss';
+@import '../components/book/_book.scss';
+@import '../components/shelf/_shelf.scss';
+@import '../components/details/_details.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-architects;
+}
+
+.loader {
+    background-color: $color-oxford-blue;
+    height: inherit;
+    color: $color-cerulean;
+
+    .title {
+        font-size: 19px;
+    }
+
+    .sub-title {
+        font-size: 12px;
+    }
+}
+
+html,
+body,
+#root,
+.app {
+    height: 100%;
+}
+
+//Bootstrap overide
+.nav-tabs .nav-link.active, {
+    border-top: 2px solid $color-outrageous-orange;
+}
+
+.nav-tabs {
+    font-size: 13px;
+    
+    .nav-item {
+        cursor: pointer;
+    }
+}
