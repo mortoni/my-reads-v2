@@ -19,7 +19,7 @@ you interact with the application.
 
 ## Project structure
 
-![Screenshot](src/assets/mybooks-udacity.png)
+![Screenshot](https://raw.githubusercontent.com/mortoni/my-reads-v2/master/src/assets/diagram.png)
 
 ## Running  
 
