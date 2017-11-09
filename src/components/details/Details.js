@@ -10,22 +10,31 @@ const Details = (props) => {
         <div>
             { book && (
                 <Modal isOpen={ modal } toggle={ () => toggle() }>
-                    <ModalHeader toggle={ () => toggle() }>Book Details</ModalHeader>
+                    <ModalHeader toggle={ () => toggle() }>
+                        Book Details
+                    </ModalHeader>
+
                     <ModalBody>
                     <div className="col text-center">
                         <h2>{ book.title }</h2>
                     </div>
 
                     <div className="col text-center subtitle">
-                        <span className="text-uppercase">{ book.subtitle }</span>
+                        <span className="text-uppercase">
+                            { book.subtitle }
+                        </span>
                     </div>
 
                     <div className="col text-center">
-                        <p className="font-weight-bold"> { book.pageCount } pages</p>
+                        <p className="font-weight-bold">
+                            { book.pageCount } pages
+                        </p>
                     </div>
 
                     <div className="col text-justify text ellipsis">
-                        <span className="text-concat">{ book.description }</span>
+                        <span className="text-concat">
+                            { book.description }
+                        </span>
                     </div>
 
                     </ModalBody>
