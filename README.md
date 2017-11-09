@@ -21,7 +21,7 @@ you interact with the application.
 
 ![Screenshot](https://raw.githubusercontent.com/mortoni/my-reads-v2/master/src/assets/diagram.png)
 
-## Running  
+## Install & Running  
 
 - Installing dependencies:
 ```{r, engine='bash', count_lines}
