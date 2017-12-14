@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 import { HashLoader } from 'react-spinners'
 import { Debounce } from 'react-throttle'
-import * as Please from '../../api/BooksAPI'
-import Details from '../details/Details'
-import Book from '../book/Book'
+import { If, Then } from 'react-if'
+import * as Please from '../../api'
+import Details from '../Details'
+import Book from '../Book'
 
-class Search extends Component {
+class Search extends PureComponent {
     constructor(props) {
         super(props)
         this.state = {
             query: '',
             foundBooks: [],
             modal: false,
-            selectedBook: {}
+            selectedBook: {},
+            loading: false
         }
     }
 
@@ -26,32 +28,35 @@ class Search extends Component {
 
     /* merge searched books with user's book */
     mergeBooks = (books) => {
-         return books.map((book) => {
+        return books.map((book) => {
             const found = this.props.books.find(b => b.id === book.id)
+            book.shelf = 'none'
             if(found) {
                 book.shelf = found.shelf
-            } else {
-                book.shelf = 'none'
             }
-          return book
+            return book
         })
     }
 
     searchBook = () => {
+        this.setState({ loading: true })
         Please.search(this.state.query, 20).then((books) => {
-            if(Array.isArray(books)) {
+            if(!books.error) {
                 this.setState({
                     foundBooks: this.mergeBooks(books)
                 })
             } else {
                 this.setState({ foundBooks: [] })
             }
+
+            this.setState({ loading: false })
         })
     }
 
     updateQuery = (query) => {
         this.setState({ query },
             () => {
+                this.setState({ foundBooks: [] })
                 if(query.length > 0) {
                     this.searchBook()
                 }
@@ -60,7 +65,7 @@ class Search extends Component {
     }
 
     render() {
-        const { query, foundBooks, modal, selectedBook } = this.state
+        const { query, foundBooks, modal, selectedBook, loading } = this.state
 
         return (
             <div className="container">
@@ -77,18 +82,23 @@ class Search extends Component {
                     </div>
 
                     <div className="text-center d-flex found">
-                        { query.length > 0 && foundBooks.length === 0 && (
-                            <HashLoader
-                              color={'#f95c3c'}
-                              loading={this.state.loading}
-                            />
-                        )}
+                        <If condition={ query.length > 0 && foundBooks.length === 0 }>
+                            <Then>
+                                <HashLoader
+                                  color={'#f95c3c'}
+                                  loading={ loading }
+                                />
+                            </Then>
+                        </If>
 
-                        { foundBooks.length > 0 && (
-                            <span className="align-self-center">
-                                { foundBooks.length } Books
-                            </span>
-                        )}
+                        <If condition={ foundBooks.length > 0 }>
+                            <Then>
+                                <span className="align-self-center text-result">
+                                    { foundBooks.length } Books
+                                </span>
+                            </Then>
+                        </If>
+
                     </div>
                 </div>
 

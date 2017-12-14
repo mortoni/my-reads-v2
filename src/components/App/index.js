@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Switch, Route, Router } from 'react-router-dom'
-import { PulseLoader } from 'react-spinners'
-import Header from '../header/Header'
-import Footer from '../footer/Footer'
-import Grid from '../grid/Grid'
-import Search from '../search/Search'
-import * as Please from '../../api/BooksAPI'
+import { If, Then, Else } from 'react-if'
+import Header from '../Header'
+import Footer from '../Footer'
+import Grid from '../Grid'
+import Search from '../Search'
+import * as Please from '../../api'
 import createHistory from 'history/createBrowserHistory'
-import logo from '../../assets/udacity.svg'
+import Loader from './Loader'
 
 const history = createHistory();
 
-class App extends Component {
+class App extends PureComponent {
 
     constructor(props) {
         super(props)
@@ -44,34 +44,14 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                {this.state.isLoading
+                <If condition={ this.state.isLoading }>
+                    <Then>
+                        <Loader />
+                    </Then>
 
-                    ?
-
-                    <div className="loader">
-                        <div className="d-flex h-100">
-                            <div className="align-self-center mx-auto text-center">
-                                <div className="col-12">
-                                    <img src={ logo }
-                                         alt="Udacity logo"
-                                         className="logo"
-                                         height="42" width="42"/>
-                                </div>
-
-                                <div className="row text-uppercase mt-2">
-                                    <span className="col-12 title">My Reads</span>
-                                    <span className="col sub-title">@Alan Mortoni</span>
-                                </div>
-
-                                <PulseLoader color={'#f95c3c'} />
-                            </div>
-                        </div>
-                    </div>
-
-                    :
-
-                    <div>
-                        <Header />
+                    <Else>
+                        <div>
+                            <Header />
 
                             <Router history={history}>
                                 <Switch>
@@ -89,10 +69,10 @@ class App extends Component {
                                 </Switch>
                             </Router>
 
-                        <Footer />
-                    </div>
-                }
-
+                            <Footer />
+                        </div>
+                    </Else>
+                </If>
             </div>
 
         );

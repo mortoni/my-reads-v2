@@ -43,7 +43,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: $color-outrageous-orange;
+    background: $color-oxford-blue;
     background-image: url('../assets/arrow-drop-down.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -64,13 +64,17 @@
     background: #eee;
     width: 128px;
     height: 193px;
+    cursor: pointer;
 
     .tag {
         background-color: $color-oxford-blue;
         opacity: 0.8;
         color: $color-outrageous-orange;
-        font-size: 12px;
+        font-size: 19px;
         border-bottom: 1px solid $color-outrageous-orange;
+        position: absolute;
+        bottom: 0;
+        width: inherit;
     }
 }
 .book-cover-title {

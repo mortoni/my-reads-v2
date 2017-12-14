@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { TabContent,
          TabPane,
          Nav,
@@ -6,16 +6,16 @@ import { TabContent,
          NavLink,
          Badge } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import { Shelves } from '../../util/Util'
+import { Shelves } from '../../util'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import Shelf from '../shelf/Shelf'
-import Details from '../details/Details'
+import Shelf from '../Shelf'
+import Details from '../Details'
 
-class Grid extends Component {
+class Grid extends PureComponent {
 
-    static PropTypes = {
-        books: PropTypes.object.isRequired,
+    static propTypes = {
+        books: PropTypes.array.isRequired,
         onUpdateBook: PropTypes.func.isRequired,
     }
 
