@@ -2,7 +2,6 @@ import React from 'react'
 import Book from '../Book'
 
 const Shelf = (props) => {
-
     const { books, shelf, toggle, onUpdateBook } = props
 
     return(
@@ -11,7 +10,6 @@ const Shelf = (props) => {
                 <div className="row">
                     { books.filter(book => book.shelf === shelf.code)
                            .map(book => (
-
                                <Book key={ book.id }
                                      book={ book }
                                      toggle={ toggle }

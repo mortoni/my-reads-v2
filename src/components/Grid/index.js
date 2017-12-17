@@ -45,7 +45,6 @@ class Grid extends PureComponent {
     }
 
     render() {
-
         const { activeTab, modal, selectedBook } = this.state
         const { onUpdateBook, books } = this.props
 

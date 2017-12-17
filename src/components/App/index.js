@@ -74,8 +74,7 @@ class App extends PureComponent {
                     </Else>
                 </If>
             </div>
-
-        );
+        )
     }
 }
 

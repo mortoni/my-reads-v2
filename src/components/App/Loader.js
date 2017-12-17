@@ -19,7 +19,7 @@ const Loader = () => {
                         <span className="col sub-title">@Alan Mortoni</span>
                     </div>
 
-                    <PulseLoader color={'#f95c3c'} />
+                    <PulseLoader color={'#F95C3C'} />
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #f95c3c;
+  background: #02B3E4;
   background-image: url("../assets/add.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -44,9 +44,10 @@
   font-size: 0; }
 
 .badge {
-  color: #f95c3c;
+  color: #02B3E4;
   background: #2e3d49;
-  margin-left: 10px; }
+  margin-left: 10px;
+  font-size: 14px; }
 
 .close-search {
   width: 50px;
@@ -153,6 +154,13 @@
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em; }
+
+select {
+  background-color: #f95c3c;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #a6a6a6;
+  border-image: initial; }
 
 .shelf {
   margin-bottom: 65px;

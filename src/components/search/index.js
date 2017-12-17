@@ -30,11 +30,7 @@ class Search extends PureComponent {
     mergeBooks = (books) => {
         return books.map((book) => {
             const found = this.props.books.find(b => b.id === book.id)
-            book.shelf = 'none'
-            if(found) {
-                book.shelf = found.shelf
-            }
-            return book
+            return found ? found : book
         })
     }
 

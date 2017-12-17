@@ -8,7 +8,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: $color-outrageous-orange;
+  background: $color-cerulean;
   background-image: url('../assets/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -18,7 +18,8 @@
 }
 
 .badge {
-    color: $color-outrageous-orange;
+    color: $color-cerulean;
     background: $color-oxford-blue;
     margin-left: 10px;
+    font-size: 14px;
 }

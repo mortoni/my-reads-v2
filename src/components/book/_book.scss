@@ -82,3 +82,11 @@
     text-align: center;
     font-size: 0.8em;
 }
+
+select {
+    background-color: $color-outrageous-orange;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
+}
